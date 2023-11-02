@@ -11,9 +11,7 @@ public class OutputView {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < carNames.size(); i++) {
             result.append(carNames.get(i)).append(" : ");
-            for (int j = 0; j < carGoingCount.get(i); j++) {
-                result.append("-");
-            }
+            appendHyphens(result, carGoingCount.get(i));
             result.append("\n");
         }
         return result.toString();
@@ -21,5 +19,11 @@ public class OutputView {
 
     public String showWinner(String winners) {
         return "최종 우승자 : " + winners;
+    }
+
+    private void appendHyphens(StringBuilder result, int count) {
+        for (int i = 0; i < count; i++) {
+            result.append("-");
+        }
     }
 }

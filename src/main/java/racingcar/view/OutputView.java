@@ -1,10 +1,10 @@
 package racingcar.view;
 
-import java.util.ArrayList;
+import java.util.List;
 import racingcar.model.Constants;
 
 public class OutputView {
-    public String showExecutionResults(ArrayList<String> carNames, ArrayList<Integer> carGoingCount) {
+    public static String showExecutionResults(List<String> carNames, List<Integer> carGoingCount) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < carNames.size(); i++) {
             result.append(carNames.get(i)).append(" : ");
@@ -13,11 +13,11 @@ public class OutputView {
         return result.toString();
     }
 
-    public String showWinner(String winners) {
+    public static String showWinner(String winners) {
         return Constants.WINNER_MESSAGE + winners;
     }
 
-    private void appendHyphens(StringBuilder result, int count) {
+    private static void appendHyphens(StringBuilder result, int count) {
         for (int i = 0; i < count; i++) {
             result.append("-");
         }

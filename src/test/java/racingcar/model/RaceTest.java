@@ -31,7 +31,7 @@ public class RaceTest {
 
         // when
         race.runRace();
-        ArrayList<Integer> resultCarGoingCount = race.getCarGoingCount();
+        List<Integer> resultCarGoingCount = race.getCarGoingCount();
 
         // then
         for (int count : resultCarGoingCount) {

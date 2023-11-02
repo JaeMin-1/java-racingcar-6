@@ -2,13 +2,14 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringJoiner;
 
 public class Race {
-    private ArrayList<String> carNames;
-    private ArrayList<Integer> carGoingCount;
+    private List<String> carNames;
+    private List<Integer> carGoingCount;
 
-    public void initialize(ArrayList<String> carNames) {
+    public void initialize(List<String> carNames) {
         this.carNames = carNames;
         /*
          * runRace() 에서 set 메서드로 접근하기 위해 실시하는 초기화
@@ -49,11 +50,11 @@ public class Race {
         return joiner.toString();
     }
 
-    public ArrayList<Integer> getCarGoingCount() {
+    public List<Integer> getCarGoingCount() {
         return carGoingCount;
     }
 
-    public ArrayList<String> getCarNames() {
+    public List<String> getCarNames() {
         return carNames;
     }
 }

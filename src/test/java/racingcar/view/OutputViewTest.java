@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import racingcar.model.Constants;
 
 class OutputViewTest {
     private OutputView outputView = new OutputView();
@@ -12,7 +13,7 @@ class OutputViewTest {
     @Test
     void showExecutionResultsHeader() {
         // when
-        String output = outputView.showExecutionResultsHeader();
+        String output = Constants.EXECUTION_RESULTS_HEADER;
 
         // then
         assertThat(output).isEqualTo("실행 결과");

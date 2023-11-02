@@ -1,9 +1,10 @@
 package racingcar.view;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.io.ByteArrayInputStream;
+import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +25,7 @@ class InputViewTest {
         System.setIn(inputStream);
 
         // when
-        String[] result = inputView.inputCarNames();
+        List<String> result = inputView.inputCarNames();
 
         // then
         assertThat(result).containsExactly("Tom", "Bob", "Lisa");

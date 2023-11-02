@@ -12,7 +12,6 @@ public class OutputView {
         for (int i = 0; i < carNames.size(); i++) {
             result.append(carNames.get(i)).append(" : ");
             appendHyphens(result, carGoingCount.get(i));
-            result.append("\n");
         }
         return result.toString();
     }
@@ -25,5 +24,6 @@ public class OutputView {
         for (int i = 0; i < count; i++) {
             result.append("-");
         }
+        result.append("\n");
     }
 }

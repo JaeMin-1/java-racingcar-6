@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import racingcar.model.CarValidation;
 import racingcar.model.NumberValidation;
 import racingcar.model.Race;
@@ -9,14 +10,11 @@ import racingcar.view.OutputView;
 
 public class GameController {
     public void runGame() {
-        InputView inputView = new InputView();
-        String[] inputArr = inputView.inputCarNames();                        // 자동차 이름 입력
-        CarValidation carValidation = new CarValidation();
-        ArrayList<String> carNames = carValidation.carValidateAll(inputArr);  // 자동차 이름 검증
+        List<String> inputArr = InputView.inputCarNames();
+        ArrayList<String> carNames = CarValidation.carValidateAll(inputArr);
 
-        String inputNumber = inputView.inputTryNumber();                      // 실행 횟수 입력
-        NumberValidation numberValidation = new NumberValidation();
-        int tryNumber = numberValidation.numbervalidateAll(inputNumber);      // 실행 횟수 검증
+        String inputNumber = InputView.inputTryNumber();
+        int tryNumber = NumberValidation.numbervalidateAll(inputNumber);
         System.out.println();
 
         Race race = new Race();

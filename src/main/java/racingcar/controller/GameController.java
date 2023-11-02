@@ -11,7 +11,6 @@ public class GameController {
     public void runGame() {
         InputView inputView = new InputView();
         String[] inputArr = inputView.inputCarNames();                        // 자동차 이름 입력
-
         CarValidation carValidation = new CarValidation();
         ArrayList<String> carNames = carValidation.carValidateAll(inputArr);  // 자동차 이름 검증
 

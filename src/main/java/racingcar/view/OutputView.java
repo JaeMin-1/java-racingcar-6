@@ -1,12 +1,9 @@
 package racingcar.view;
 
 import java.util.ArrayList;
+import racingcar.model.Constants;
 
 public class OutputView {
-    public String showExecutionResultsHeader() {
-        return "실행 결과";
-    }
-
     public String showExecutionResults(ArrayList<String> carNames, ArrayList<Integer> carGoingCount) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < carNames.size(); i++) {
@@ -17,7 +14,7 @@ public class OutputView {
     }
 
     public String showWinner(String winners) {
-        return "최종 우승자 : " + winners;
+        return Constants.WINNER_MESSAGE + winners;
     }
 
     private void appendHyphens(StringBuilder result, int count) {

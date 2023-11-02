@@ -28,7 +28,12 @@ class OutputViewTest {
         String output = outputView.showExecutionResults(carNames, carGoingCount);
 
         // then
-        assertThat(output).isEqualTo("Tom : ---\nBob : -----\nLisa : --\n");
+        StringBuilder expectedOutput = new StringBuilder();
+        expectedOutput.append("Tom : ---\n");
+        expectedOutput.append("Bob : -----\n");
+        expectedOutput.append("Lisa : --\n");
+
+        assertThat(output).isEqualTo(expectedOutput.toString());
     }
 
     @Test

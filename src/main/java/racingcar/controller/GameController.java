@@ -3,6 +3,7 @@ package racingcar.controller;
 import java.util.ArrayList;
 import java.util.List;
 import racingcar.model.CarValidation;
+import racingcar.model.Constants;
 import racingcar.model.NumberValidation;
 import racingcar.model.Race;
 import racingcar.view.InputView;
@@ -21,7 +22,7 @@ public class GameController {
         race.initialize(carNames);
 
         OutputView outputView = new OutputView();
-        System.out.println(outputView.showExecutionResultsHeader());
+        System.out.println(Constants.EXECUTION_RESULTS_HEADER);
         for (int i = 0; i < tryNumber; i++) {
             race.runRace();
             System.out.println(outputView.showExecutionResults(race.getCarNames(), race.getCarGoingCount()));

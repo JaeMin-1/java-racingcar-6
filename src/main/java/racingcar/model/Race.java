@@ -39,9 +39,7 @@ public class Race {
     }
 
     public String winners() {
-        List<Integer> carGoingCountCopy = new ArrayList<>(carGoingCount);
-        Collections.sort(carGoingCountCopy, Collections.reverseOrder());
-        int maxCount = carGoingCountCopy.get(0);
+        int maxCount = maxCountGenerator();
 
         StringJoiner joiner = new StringJoiner(", ");
         for (int i = 0; i < carGoingCount.size(); i++) {
@@ -58,5 +56,12 @@ public class Race {
 
     public List<String> getCarNames() {
         return carNames;
+    }
+
+    private int maxCountGenerator() {
+        List<Integer> carGoingCountCopy = new ArrayList<>(carGoingCount);
+        Collections.sort(carGoingCountCopy, Collections.reverseOrder());
+        int maxCount = carGoingCountCopy.get(0);
+        return maxCount;
     }
 }

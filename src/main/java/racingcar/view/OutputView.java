@@ -14,7 +14,7 @@ public class OutputView {
     }
 
     public static String showWinner(String winners) {
-        return Constants.WINNER_MESSAGE + winners;
+        return Constants.WINNER_MESSAGE.getValue() + winners;
     }
 
     private static void appendHyphens(StringBuilder result, int count) {

@@ -7,7 +7,7 @@ import racingcar.model.Constants;
 
 public class InputView {
     public static List<String> inputCarNames() {
-        System.out.println(Constants.CAR_NAMES_PROMPT);
+        System.out.println(Constants.CAR_NAMES_PROMPT.getValue());
         String input = UserInput();
         String[] inputs = input.split(",");
 
@@ -19,7 +19,7 @@ public class InputView {
     }
 
     public static String inputTryNumber() {
-        System.out.println(Constants.TRY_NUMBER_PROMPT);
+        System.out.println(Constants.TRY_NUMBER_PROMPT.getValue());
         String inputNumber = UserInput();
         return inputNumber;
     }

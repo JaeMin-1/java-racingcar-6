@@ -21,13 +21,13 @@ public class CarValidation {
     }
 
     private static void validateCarNameLength(String input) {
-        if (input.length() > Constants.MAX_CAR_NAME_LENGTH) {
+        if (input.length() > (int) Constants.MAX_CAR_NAME_LENGTH.getValue()) {
             throw new IllegalArgumentException("자동차 이름이 5자 이하가 아닙니다: " + input);
         }
     }
 
     private static void validateCarNameCharacters(String input) {
-        if (!input.matches(Constants.NAME_CHARACTER_PATTERN)) {
+        if (!input.matches((String) Constants.NAME_CHARACTER_PATTERN.getValue())) {
             throw new IllegalArgumentException("특수문자가 포함된 문자열이 입력되었습니다: " + input);
         }
     }

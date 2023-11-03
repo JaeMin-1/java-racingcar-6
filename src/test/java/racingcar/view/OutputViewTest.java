@@ -13,7 +13,7 @@ class OutputViewTest {
     @Test
     void showExecutionResultsHeader() {
         // when
-        String output = Constants.EXECUTION_RESULTS_HEADER;
+        String output = (String) Constants.EXECUTION_RESULTS_HEADER.getValue();
 
         // then
         assertThat(output).isEqualTo("실행 결과");

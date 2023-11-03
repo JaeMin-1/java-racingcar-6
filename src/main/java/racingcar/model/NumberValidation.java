@@ -16,7 +16,7 @@ public class NumberValidation {
     }
 
     private static void validateMinimumCount(int tryNumber) {
-        if (tryNumber < Constants.MIN_TRY_NUMBER) {
+        if (tryNumber < (int) Constants.MIN_TRY_NUMBER.getValue()) {
             throw new IllegalArgumentException("잘못된 시도 횟수입니다.");
         }
     }

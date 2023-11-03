@@ -3,7 +3,11 @@ package racingcar.model;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 class NumberValidationTest {
     private NumberValidation numberValidation = new NumberValidation();
@@ -20,25 +24,22 @@ class NumberValidationTest {
         assertThat(5).isEqualTo(tryNumber);
     }
 
-    @Test
-    void numbervalidateAll_not_number() {
-        // given
-        String inputNumber = "abc";
-
-        // when & then
-        assertThatThrownBy(() -> numberValidation.numbervalidateAll(inputNumber))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("숫자가 아닌 값을 입력하셨습니다.");
+    static Stream<Arguments> invalidParameters() {
+        return Stream.of(
+                Arguments.of("abc", "숫자가 아닌 값을 입력하셨습니다."),
+                Arguments.of("-1", "잘못된 시도 횟수입니다.")
+        );
     }
 
-    @Test
-    void numbervalidateAll_wrong_number() {
+    @ParameterizedTest
+    @MethodSource("invalidParameters")
+    void validateAll(String number, String errorMessage) {
         // given
-        String inputNumber = "0";
+        String inputNumber = number;
 
         // when & then
-        assertThatThrownBy(() -> numberValidation.numbervalidateAll(inputNumber))
+        assertThatThrownBy(() -> NumberValidation.numbervalidateAll(inputNumber))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("잘못된 시도 횟수입니다.");
+                .hasMessage(errorMessage);
     }
 }

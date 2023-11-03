@@ -2,6 +2,7 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
@@ -37,10 +38,9 @@ public class Race {
     }
 
     public String winners() {
-        int maxCount = 0;
-        for (int i = 0; i < carGoingCount.size(); i++) {
-            maxCount = Math.max(maxCount, carGoingCount.get(i));
-        }
+        Collections.sort(carGoingCount, Collections.reverseOrder());
+        int maxCount = carGoingCount.get(0);
+
         StringJoiner joiner = new StringJoiner(", ");
         for (int i = 0; i < carGoingCount.size(); i++) {
             if (maxCount == carGoingCount.get(i)) {

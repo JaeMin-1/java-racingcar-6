@@ -1,4 +1,4 @@
-package racingcar.model;
+package racingcar.constants;
 
 public enum Constants {
     MAX_CAR_NAME_LENGTH(5),

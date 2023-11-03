@@ -1,7 +1,7 @@
 package racingcar.view;
 
 import java.util.List;
-import racingcar.model.Constants;
+import racingcar.constants.Constants;
 
 public class OutputView {
     public static String showExecutionResults(List<String> carNames, List<Integer> carGoingCount) {

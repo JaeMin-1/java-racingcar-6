@@ -3,7 +3,7 @@ package racingcar.view;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.model.Constants;
+import racingcar.constants.Constants;
 
 public class InputView {
     public static List<String> inputCarNames() {

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import racingcar.constants.Constants;
+import racingcar.constants.ErrorMessages;
 
 public class CarValidation {
     public static ArrayList<String> carValidateAll(List<String> inputArr) {
@@ -22,19 +24,19 @@ public class CarValidation {
 
     private static void validateCarNameLength(String input) {
         if (input.length() > (int) Constants.MAX_CAR_NAME_LENGTH.getValue()) {
-            throw new IllegalArgumentException("자동차 이름이 5자 이하가 아닙니다: " + input);
+            throw new IllegalArgumentException(ErrorMessages.CAR_NAME_LENGTH_EXCEED.getMessage() + input);
         }
     }
 
     private static void validateCarNameCharacters(String input) {
         if (!input.matches((String) Constants.NAME_CHARACTER_PATTERN.getValue())) {
-            throw new IllegalArgumentException("특수문자가 포함된 문자열이 입력되었습니다: " + input);
+            throw new IllegalArgumentException(ErrorMessages.NAME_CHARACTER_PATTERN_MISMATCH.getMessage() + input);
         }
     }
 
     private static void validateDuplication(String input, Set<String> checkDuplication) {
         if (!checkDuplication.add(input)) {
-            throw new IllegalArgumentException("중복된 이름이 입력되었습니다: " + input);
+            throw new IllegalArgumentException(ErrorMessages.DUPLICATE_NAME.getMessage() + input);
         }
     }
 }

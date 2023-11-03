@@ -1,5 +1,8 @@
 package racingcar.model;
 
+import racingcar.constants.Constants;
+import racingcar.constants.ErrorMessages;
+
 public class NumberValidation {
     public static int numbervalidateAll(String inputNumber) {
         int tryNumber = validateNotNumber(inputNumber);
@@ -11,13 +14,13 @@ public class NumberValidation {
         try {
             return Integer.parseInt(inputNumber);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("숫자가 아닌 값을 입력하셨습니다.");
+            throw new IllegalArgumentException(ErrorMessages.NOT_A_NUMBER.getMessage());
         }
     }
 
     private static void validateMinimumCount(int tryNumber) {
         if (tryNumber < (int) Constants.MIN_TRY_NUMBER.getValue()) {
-            throw new IllegalArgumentException("잘못된 시도 횟수입니다.");
+            throw new IllegalArgumentException(ErrorMessages.MINIMUM_TRY_NUMBER.getMessage());
         }
     }
 }

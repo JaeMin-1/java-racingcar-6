@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import racingcar.constants.Constants;
 
 public class Race {
     private List<String> carNames;

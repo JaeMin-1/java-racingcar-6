@@ -1,8 +1,8 @@
 package racingcar.controller;
 
 import java.util.List;
+import racingcar.constants.Constants;
 import racingcar.model.CarValidation;
-import racingcar.model.Constants;
 import racingcar.model.NumberValidation;
 import racingcar.model.Race;
 import racingcar.view.InputView;
